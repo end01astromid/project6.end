@@ -2,6 +2,7 @@
   "name": "project",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +25,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3",
     "nodemailer": "^7.0.10",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "typescript": "^5.9.3"
   }
 }
