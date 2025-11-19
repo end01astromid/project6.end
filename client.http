@@ -1,0 +1,25 @@
+### Создать событие
+POST http://localhost:5000/api/events
+Content-Type: application/json
+
+{
+  "name": "Concert",
+  "total_seats": 3
+}
+
+### Все события
+GET http://localhost:5000/api/events
+
+
+
+### Забронировать место
+POST http://localhost:5000/api/bookings/reserve
+Content-Type: application/json
+
+{
+  "event_id": "",
+  "user_id": "user1"
+}
+
+### Получить все бронирования
+GET http://localhost:5000/api/bookings
