@@ -23,7 +23,7 @@ Content-Type: application/json
 ### Создать событие
 POST http://localhost:5000/api/events
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MjJkZTAzZDk1N2E5YmRjYzlhOWE1YiIsImVtYWlsIjoiYXN0cm9taWQwMUBnbWFpbC5jb20iLCJkYXRlIjoiMjAyNS0xMS0yM1QxMDoxMjoxOS4yMjRaIiwiaWF0IjoxNzYzODkyNzQxLCJleHAiOjE3NjM4OTYzNDF9.mUZeJra21gmEMm9mBolTLOFG-rizHn1vmYDCwDyF1D8
+Authorization: Bearer 
 
 {
   "name": "Concert",
@@ -38,7 +38,7 @@ GET http://localhost:5000/api/events
 ### Забронировать место
 POST http://localhost:5000/api/bookings/reserve
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MjJkZTAzZDk1N2E5YmRjYzlhOWE1YiIsImVtYWlsIjoiYXN0cm9taWQwMUBnbWFpbC5jb20iLCJkYXRlIjoiMjAyNS0xMS0yM1QxMDoxMjoxOS4yMjRaIiwiaWF0IjoxNzYzOTY4OTE1LCJleHAiOjE3NjM5NzI1MTV9.GIBaWn6HoVh2-ihI3mqygW8gClJKYBkdAyvZUR4-pJA
+Authorization: Bearer 
 
 {
   "event_id": "6922dd81d957a9bdcc9a9a52",
