@@ -1,15 +1,15 @@
 import express from "express";
 import Booking from "../models/booking.js";
-import Event from "../models/event.js";
-
+import Event from "../models/event.js"; 
+import middleware from '../middle_token/authmiddleware.js'
 const router = express.Router();
 
 // Забронировать место
-router.post("/reserve", async (req, res) => {
-  const { event_id, user_id } = req.body;
+router.post("/reserve",middleware, async (req, res) => {
+  const { event_id } = req.body;
 
-  if (!event_id || !user_id) {
-    return res.status(400).json({ message: "event_id и user_id обязательны" });
+  if (!event_id) {
+    return res.status(400).json({ message: "event_id обязательны" });
   }
 
   try {
@@ -24,7 +24,7 @@ router.post("/reserve", async (req, res) => {
       return res.status(400).json({ message: "Все места заняты" });
     }
 
-    const booking = new Booking({ event_id, user_id });
+    const booking = new Booking({ event_id, user_id: req.user.id });
     await booking.save();
 
     res.status(201).json({ message: "Место успешно забронировано", booking });
@@ -33,7 +33,7 @@ router.post("/reserve", async (req, res) => {
       return res.status(400).json({ message: "Пользователь уже забронировал место" });
     }
 
-    res.status(500).json({ message: "Ошибка сервера" });
+    res.status(500).json({ message: "Ошибка сервера", error: err.message });
   }
 });
 

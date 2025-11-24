@@ -4,6 +4,8 @@ import "dotenv/config";
 
 import bookingsRouter from "./routes/bookings.js";
 import eventsRouter from "./routes/events.js"; 
+import usersRouter from './routes/users.js';
+
 
 const app = express();
 app.use(express.json());
@@ -11,6 +13,7 @@ app.use(express.json());
 
 app.use("/api/events", eventsRouter);
 app.use("/api/bookings", bookingsRouter);
+app.use('/api/users', usersRouter)
 
 
 async function startDB() {
